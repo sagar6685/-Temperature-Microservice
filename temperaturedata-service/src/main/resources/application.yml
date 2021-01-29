@@ -1,0 +1,32 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: TEMPERATURE-SERVICE
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+    
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: Temperaturedata
+      
+security:
+ basic:
+  enabled: false
+management:
+ security:
+  enabled: false
+ endpoint:
+   prometheus:
+     enabled: true
+ endpoints:
+   enabled-by-default: true
+   jmx:
+     exposure:
+       exclude: "*"
+   web:
+     exposure:
+       include: "*"

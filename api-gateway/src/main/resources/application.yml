@@ -1,0 +1,10 @@
+server:
+  port: 9100
+  
+spring:  application:    name: API-GATEWAY
+  cloud:    gateway:      routes:      - id: USER-SERVICE
+        uri: lb://USER-SERVICE        predicates:         - Path=/users/**
+      - id: TEMPERATURE-SERVICE
+        uri: lb://TEMPERATURE-SERVICE
+        predicates:
+         - Path=/temperature/**

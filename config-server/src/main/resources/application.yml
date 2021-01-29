@@ -1,0 +1,12 @@
+server:
+  port: 9300
+  
+spring:
+  application:
+    name: CONFIG-SERVICE
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sagar6685/temperature-config-server
+          clone-on-start: true
